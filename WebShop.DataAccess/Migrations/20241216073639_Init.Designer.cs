@@ -11,8 +11,8 @@ using WebShop.DataAccess;
 namespace WebShop.DataAccess.Migrations
 {
     [DbContext(typeof(WebShopDbContext))]
-    [Migration("20241211181150_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20241216073639_Init")]
+    partial class Init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -46,6 +46,29 @@ namespace WebShop.DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Products");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "Product",
+                            Name = "Test",
+                            Price = 10.0
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Description = "2Product",
+                            Name = "2Test",
+                            Price = 20.0
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Description = "Product Drift",
+                            Name = "Test 3",
+                            Price = 30.0
+                        });
                 });
 #pragma warning restore 612, 618
         }

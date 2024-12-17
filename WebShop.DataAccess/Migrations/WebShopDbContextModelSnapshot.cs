@@ -43,6 +43,29 @@ namespace WebShop.DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Products");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "Product",
+                            Name = "Test",
+                            Price = 10.0
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Description = "2Product",
+                            Name = "2Test",
+                            Price = 20.0
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Description = "Product Drift",
+                            Name = "Test 3",
+                            Price = 30.0
+                        });
                 });
 #pragma warning restore 612, 618
         }
